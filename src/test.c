@@ -14,3 +14,9 @@ int main(int argc, char ** argv) {
 	*/
 	return 0;
 }
+
+int test_vec() {
+	return 0;
+}
+
+
