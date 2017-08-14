@@ -81,12 +81,12 @@ int vec_insert(vec_t *vec, void *elem, size_t idx) {
 		}
 		if(vec->_capacity > vec->_size) {
 			vec->_size++;
-			i= vec->_size;
+			i = vec->_size-1;
 			while(i>idx) {
-				i--;
 				offset = vec->_element_size *i;
-				offset_prev = offset - vec->_element_size;
+                offset_prev = offset - vec->_element_size;
 				memcpy(((char *)vec->_data)+offset, ((char *)vec->_data)+offset_prev, vec->_element_size);
+				i--;
 			}
 			offset = vec->_element_size * idx;
 			memcpy(((char *)vec->_data)+offset, (char *)elem, vec->_element_size);
