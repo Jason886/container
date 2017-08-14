@@ -1,6 +1,13 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
+/*
+ * TODO: 
+ * 1.remove list_t *list in struct list_node_t;
+ * 2.
+ *
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -38,7 +45,8 @@ for(node=list->head_guard->next; p!=list->head_guard; p=p->next)
 #define list_foreach_r(list, node) \
 for(node=list->head_guard->prev; p!=list->head_guard; p=p->prev)
 
-
+#define list_head(list) (list->head_guard->next)
+#define list_tail(list) (list->head_guard->prev)
 #define list_insert(node, data, len) list_insert_after(node, data, len)
 
 #ifdef __cplusplus
