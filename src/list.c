@@ -28,6 +28,7 @@ list_t * list_new() {
 			memset(list->head_guard, 0x00, sizeof(*list->head_guard));
 			list->head_guard->prev = list->head_guard;
 			list->head_guard->next = list->head_guard;
+            list->head_guard->list = list;
 		}
 	}
 	return list;
@@ -38,6 +39,7 @@ void list_del(list_t * list) {
 	if(list) {
 		list_clear(list);
 		free(list->head_guard);
+        memset(list, 0x00, sizeof(*list));
 		free(list);
 	}
 }

@@ -33,6 +33,11 @@ void list_clear(list_t *list);
 list_node_t * list_find(list_node_t * begin, void *data, size_t len);
 list_node_t * list_find_r(list_node_t * begin, void *data, size_t len);
 
+#define list_foreach(list, node) \
+for(node=list->head_guard->next; p!=list->head_guard; p=p->next)
+#define list_foreach_r(list, node) \
+for(node=list->head_guard->prev; p!=list->head_guard; p=p->prev)
+
 
 #define list_insert(node, data, len) list_insert_after(node, data, len)
 
