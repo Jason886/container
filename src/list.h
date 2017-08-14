@@ -1,13 +1,6 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
-/*
- * TODO: 
- * 1.remove list_t *list in struct list_node_t;
- * 2.
- *
- */
-
 #ifdef __cplusplus
 extern "C" {
 #endif
