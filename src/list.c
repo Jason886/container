@@ -3,7 +3,7 @@
 #include <memory.h>
 #include "list.h"
 
-static list_node_t * _new_node(list_t *list, void *data, size_t len) {
+static list_node_t * _new_node(list_t *list, const void *data, size_t len) {
 	list_node_t *node = 0;
 	node = malloc(sizeof(*node) + len);
 	if(node) {
@@ -90,7 +90,7 @@ void list_remove(list_node_t * node) {
 	}
 }
 
-int list_add_back(list_t * list, void *data, size_t len) {
+int list_add_back(list_t * list, const void *data, size_t len) {
 	assert(list);
 	if(!list) {
 		return -1;
@@ -99,7 +99,7 @@ int list_add_back(list_t * list, void *data, size_t len) {
 }
 
 
-int list_add_front(list_t * list, void *data, size_t len) {
+int list_add_front(list_t * list, const void *data, size_t len) {
 	assert(list);
 	if(!list) {
 		return -1;
@@ -107,7 +107,7 @@ int list_add_front(list_t * list, void *data, size_t len) {
 	return list_insert_after(list->head_guard, data, len);
 }
 
-int list_insert_after(list_node_t * node, void *data, size_t len) {
+int list_insert_after(list_node_t * node, const void *data, size_t len) {
 	list_node_t * ins_node = 0;
 	assert(node);
 	assert(node->list);
@@ -130,7 +130,7 @@ int list_insert_after(list_node_t * node, void *data, size_t len) {
 	return 0;
 }
 
-int list_insert_before(list_node_t * node, void *data, size_t len) {
+int list_insert_before(list_node_t * node, const void *data, size_t len) {
 	list_node_t * ins_node = 0;
 	assert(node);
 	assert(node->list);

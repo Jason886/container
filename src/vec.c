@@ -71,7 +71,7 @@ int vec_empty(vec_t * vec) {
 	return vec->_size == 0;
 }
 
-int vec_insert(vec_t *vec, void *elem, size_t idx) {
+int vec_insert(vec_t *vec, const void *elem, size_t idx) {
 	size_t i, offset, offset_prev;
 	assert(vec);
 	assert(idx <= vec->_size);
@@ -96,7 +96,7 @@ int vec_insert(vec_t *vec, void *elem, size_t idx) {
 	return -1;
 }
 
-int vec_append(vec_t *vec, void *elem) {
+int vec_append(vec_t *vec, const void *elem) {
 	size_t offset;
 	assert(vec);
 	assert(elem);

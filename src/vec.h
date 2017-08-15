@@ -3,7 +3,6 @@
 
 #include <stddef.h>
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -22,8 +21,8 @@ size_t vec_size(vec_t *vec);
 size_t vec_capacity(vec_t *vec);
 size_t vec_element_size(vec_t *vec);
 int vec_empty(vec_t *vec);
-int vec_insert(vec_t *vec, void *elem, size_t idx);
-int vec_append(vec_t *vec, void *elem);
+int vec_insert(vec_t *vec, const void *data, size_t idx);
+int vec_append(vec_t *vec, const void *data);
 void vec_remove(vec_t *vec, size_t idx);
 void vec_remove_back(vec_t *vec);
 int vec_value_at(vec_t *vec, size_t idx, void *ele_o);
