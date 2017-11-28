@@ -102,6 +102,7 @@ void map_remove(map_t *map , const void *key) {
                 pre->next = n->next;
             }
             free(n);
+            return;
         }
    }
 }
